@@ -1,23 +1,42 @@
-# Complete Guide to Data Lakes and Lakehouses
+# 🚌 Real-Time Transit Delay Prediction using GTFS Data
 
-This is the repository for the LinkedIn Learning course `Complete Guide to Data Lakes and Lakehouses`. The full course is available from [LinkedIn Learning][lil-course-url].
+This project implements a scalable, end-to-end machine learning system for predicting real-time delays in public transit using GTFS-static and GTFS-realtime datasets. It features an automated cloud-based ETL pipeline, feature engineering, model training, and real-time prediction interface using Python and Streamlit.
 
-![lil-thumbnail-url]
+---
 
-In this course, data engineer and technical writer Thalia Barrera offers an introductory yet comprehensive overview of data lakes. Learn about key concepts like data lake architecture, operation, and integration with existing data systems. Delve into how data lakes are integral to AI and machine learning workflows. Go over the differences between data lakes, data warehouses, and databases. Explore various data formats and their applicability in a data lake environment. Use included hands-on exercises to practice setting up a basic data lake and performing simple data operations. When you finish this course, you will be equipped to make informed decisions about implementing and managing data lakes in your organization.
+## 🚀 Project Overview
+
+- **Goal:** Predict stop-level transit delays in real time using historical and live GTFS data.
+- **Pipeline:** ETL → Feature Engineering → Model Training → Real-Time Inference
+- **Tools:** AWS (S3, Glue, Athena, Lambda, ROSA), Python, scikit-learn, Streamlit
+- **Data Source:** GTFS-static and GTFS-realtime feeds from transit agencies
+
+---
 
 
-### Instructor
+## 📊 Features
 
-Thalia Barrera
+- ✅ Real-time delay prediction using GTFS-realtime feeds
+- ✅ Fully automated ETL with schema management (Glue + Athena)
+- ✅ Feature-rich dataset (temporal, spatial, operational)
+- ✅ Multiple model evaluation (RF, CatBoost, XGBoost, KNN, etc.)
+- ✅ Streamlit dashboard for interactive predictions
+- ✅ CLI tool for backend or batch prediction
+- ✅ Scalable architecture with modular components
 
-Data Engineer and Technical Writer
+---
 
-                            
+## 🧠 Machine Learning Models
 
-Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learning/instructors/thalia-barrera?u=104).
+| Model         | MAE (s) | RMSE (s) | R² Score |
+|---------------|---------|----------|----------|
+| Random Forest | 24.44   | 33.73    | 0.41     |
+| CatBoost      | 26.39   | 34.28    | 0.39     |
+| KNN           | 25.03   | 35.71    | 0.34     |
+| XGBoost       | 25.41   | 36.94    | 0.29     |
 
-[0]: # (Replace these placeholder URLs with actual course URLs)
+📌 **Random Forest** was selected for deployment due to its superior accuracy and inference speed.
 
-[lil-course-url]: https://www.linkedin.com/learning/complete-guide-to-data-lakes-and-lakehouses
-[lil-thumbnail-url]: https://media.licdn.com/dms/image/v2/D4E0DAQElOqYYEDkjrA/learning-public-crop_675_1200/learning-public-crop_675_1200/0/1723753479181?e=2147483647&v=beta&t=wBOLtenTAKhLM4I2eXPz02P3sfkYp8m3Z_q6folBx0g
+---
+
+
